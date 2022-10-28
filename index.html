@@ -89,6 +89,9 @@
             <!-- middle container-->
             <div class="modal-dialog modal-dialog-scrollable" id="modal"></div>
            <div class="shadow-sm p-3 mb-5 bg-dark rounded rounded-2  border-5 d-flex flex-column col-md-12 col-sm-12 col-lg-8  justify-content-center align-items-center bg-dark container vh-25  position-relative " style="height:5in; top:1.5in;">
+            <div class="spinner-grow col-5 text-light toggle" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
             <div class="btn-group col-4 "> 
                 <button class="btn btn-secondary btn-outline-dark active" id="btnU">URL</button>
                 <button class="btn btn-secondary btn-outline-dark" id="btnS">SEARCH</button>
@@ -98,6 +101,7 @@
                   <p class="text-white" id="text"></p>
                     <input type="text" id="input" class="input mt-5 rounded-0 shadow-none text-bg-success bg-dark border-top-0  form-control " id="data" placeholder="Search or scan a URL" name="data" autocomplete="off">    
                   </div>
+                  
            </div>
            
             <footer class="shadow-sm bg-dark rounded w-100  d-sm-block d-none fixed-bottom footer bg-dark text-center text-white">

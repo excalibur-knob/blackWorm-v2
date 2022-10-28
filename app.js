@@ -3,6 +3,7 @@ const btnU = document.getElementById("btnU")
 const input = document.querySelector("#input")
 const form = document.getElementById("form")
 const textArea = document.getElementById("text")
+const loader = document.querySelector('.toggle')
 
 document.onclick = () => {
     textArea.innerHTML=""
@@ -61,6 +62,7 @@ form.onsubmit = async (e) => {
             data : input.value
     }
     e.preventDefault()
+    loader.style.display = 'block'
     const r = await axios
         .post("http://localhost:5000/search", 
             
@@ -72,11 +74,13 @@ form.onsubmit = async (e) => {
             withCredentials: true
         })
         .then(result => {
+            loader.style.display = 'none'
             input.style.display = "none"
             textLoader(result.data.identifier,result.data.text)
          
         })
         .catch(error => {
+            loader.style.display = 'none'
             input.style.display = "none"
             notFound();
         });

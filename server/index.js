@@ -13,7 +13,7 @@ app.use(express.json()); // Used to parse JSON bodies
 app.use(express.urlencoded({extended: true})); //Parse URL-encoded bodies
 app.use(cors({
   credentials: true,
-  origin: ['http://127.0.0.1:5500',"https://black-worm-v2.vercel.app","https://black-worm-v2-950hi9qfm-excalibur-knob.vercel.app"],
+  origin: ['http://127.0.0.1:5500',"https://black-worm-v2.vercel.app","https://black-worm-v2-950hi9qfm-excalibur-knob.vercel.app","https://black-worm-v2-ovvadjw6g-excalibur-knob.vercel.app"],
   default:"http://127.0.0.1:5500"
 }))
 app.use(bodyParser.json());

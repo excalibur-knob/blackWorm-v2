@@ -7,6 +7,12 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; child-src 'none'; 
+        style-src 'unsafe-inline' https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css fonts.googleapis.com http://127.0.0.1:5500/style.css https://black-worm-v2.vercel.app/style.css https://use.fontawesome.com/releases/v5.6.3/css/all.css http://127.0.0.1:5500/css/bootstrap.css https://black-worm-v2.vercel.app/css/bootstrap.css https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css; 
+        script-src 'unsafe-inline' https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js https://unpkg.com/axios/dist/axios.min.js http://127.0.0.1:5500/app.js https://black-worm-v2.vercel.app/app.js;
+        font-src https://* data:;
+        img-src data: w3.org/svg/2000;
+        connect-src http://localhost:5000/search ws://127.0.0.1:5500/index.html/ws" />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -88,7 +94,7 @@
             </nav>
             <!-- middle container-->
             <div class="modal-dialog modal-dialog-scrollable" id="modal"></div>
-           <div class="shadow-sm p-3 mb-5 bg-dark rounded rounded-2  border-5 d-flex flex-column col-md-12 col-sm-12 col-lg-8  justify-content-center align-items-center bg-dark container vh-25  position-relative " style="height:5in; top:1.5in;">
+           <div class="cntr shadow-sm p-3 mb-5 bg-dark rounded rounded-2  border-5 d-flex flex-column col-md-12 col-sm-12 col-lg-8  justify-content-center align-items-center bg-dark container vh-25  position-relative " style="height:5in; top:1.5in;">
             <div class="spinner-grow col-5 text-light toggle" role="status">
               <span class="sr-only">Loading...</span>
             </div>
@@ -96,9 +102,9 @@
                 <button class="btn btn-secondary btn-outline-dark active" id="btnU">URL</button>
                 <button class="btn btn-secondary btn-outline-dark" id="btnS">SEARCH</button>
             </div>
-            <form class="col-5" id="form" action="/" method="get">
-                <div class="md-form row form-group col-md-12 col-md-offset-4  ">
-                  <p class="text-white" id="text"></p>
+            <form class="col-5" id="form">
+                <div class="md-form row form-group col-md-12 col-md-offset-4">
+                  <p class="text-white" id="text" class="col-md-4"></p>
                     <input type="text" id="input" class="input mt-5 rounded-0 shadow-none text-bg-success bg-dark border-top-0  form-control " id="data" placeholder="Search or scan a URL" name="data" autocomplete="off">    
                   </div>
                   
@@ -150,9 +156,6 @@
             </div>
             <!-- Copyright -->
           </footer>
-            
-          
-       
             <script src="app.js" async="async" defer="defer"></script>
         </body>
     </html>

@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const USER = process.env.USER
+const USERNAME = 'blackworm'
 const PASS = process.env.PASS
 const AUTHDB = process.env.AUTHDB
-const mongoAtlasUri = 'mongodb+srv://blackworm:dark@cluster0.msiqgrz.mongodb.net/?retryWrites=true&w=majority'
-console.log(USER)
+const mongoAtlasUri = `mongodb+srv://${USERNAME}:${PASS}@cluster0.msiqgrz.mongodb.net/?retryWrites=true&w=majority`
+console.log(USERNAME)
 exports.connect = () => {
     mongoose.connect(
         mongoAtlasUri,

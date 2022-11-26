@@ -70,14 +70,12 @@ form.onsubmit = async (e) => {
          {
             headers: {
                 "Content-Type": "application/json"
-            },
-            withCredentials: true
+            },  
         })
         .then(result => {
             loader.style.display = 'none'
             input.style.display = "none"
             textLoader(result.data.identifier,result.data.text)
-         
         })
         .catch(error => {
             loader.style.display = 'none'

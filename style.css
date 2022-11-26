@@ -157,3 +157,11 @@
   .toggle{
     display:none;
   }
+  @media screen and ( max-height: 600px ) and (max-width: 1024px)  {
+    .cntr{
+      position: relative;
+      top:2px !important;
+      height:2in !important;
+    }
+   }
+  

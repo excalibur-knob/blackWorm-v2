@@ -4,11 +4,12 @@ const input = document.querySelector("#input")
 const form = document.getElementById("form")
 const textArea = document.getElementById("text")
 const loader = document.querySelector('.toggle')
-
+let setIntervalOfText;
 document.onclick = () => {
     textArea.innerHTML=""
     input.style.display="block"
     input.value=''
+    clearInterval(setIntervalOfText)
 }
 
 btnS.onclick = () => {
@@ -37,18 +38,14 @@ btnU.onclick = () => {
 }
 
 const textLoader = (identifier,text) => {
-let speed = 10;
 let watcher = 0;
 let content = `${identifier.toString()} ${text.toString()}`;
 textArea.innerHTML = "";
-function typeWriter() {
+setIntervalOfText = setInterval(()=>{
     if(watcher < content.length){
-        textArea.innerHTML += content.charAt(watcher);
-        watcher++;
-        setTimeout(typeWriter,speed);
-    }
-}
-typeWriter();
+    textArea.innerHTML += content.charAt(watcher);
+    watcher++;
+    }},10)
 }
 
 const notFound = () => {
